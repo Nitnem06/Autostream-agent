@@ -18,12 +18,19 @@ An intelligent conversational AI agent for AutoStream — a content creation pla
 
 ## 📁 Project Structure
 Autostream-agent/
+
 ├── agent/           # LangGraph nodes, state, prompts
+
 ├── rag/             # Retriever logic
+
 ├── tools/           # Lead capture tool
+
 ├── knowledge_base/  # Markdown KB
+
 ├── static/          # Frontend UI
+
 ├── server.py        # FastAPI + WebSocket server
+
 └── main.py          # CLI entry point
 
 
