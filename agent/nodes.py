@@ -1,9 +1,9 @@
 import os
 from dotenv import load_dotenv
-from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 
 from agent.state import AgentState
+from agent.llm import get_llm
 from agent.prompts import (
     INTENT_DETECTION_PROMPT,
     GREETING_PROMPT,
@@ -19,12 +19,7 @@ from tools.lead_capture import mock_lead_capture, is_valid_email
 
 load_dotenv()
 
-llm = ChatAnthropic(
-    model="claude-3-haiku-20240307",
-    temperature=0.3,
-    max_tokens=1024,
-    api_key=os.getenv("ANTHROPIC_API_KEY"),
-)
+llm = get_llm()  # ResilientLLM with Anthropic primary + OpenAI fallback
 
 
 def _last_user_message(state: AgentState) -> str:

@@ -3,7 +3,7 @@ from pathlib import Path
 from langchain_community.document_loaders import TextLoader
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.text_splitter import MarkdownTextSplitter
+from langchain_text_splitters import MarkdownTextSplitter
 
 KB_PATH = Path(__file__).parent.parent / "knowledge_base" / "Autostream_kb.md"
 _vectorstore = None
